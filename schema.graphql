@@ -1,0 +1,12 @@
+type Transfer @entity {
+  id: ID! # id is a required field
+  amount: BigInt # Amount that is transferred
+  blockNumber: BigInt # The block height of the transfer
+  from: Account! # The account that transfers are made to
+  to: Account! # The account that transters are made to
+}
+
+type Account @entity { 
+  id: ID! 
+  publicAddress: String! 
+}
