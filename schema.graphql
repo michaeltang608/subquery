@@ -1,12 +1,15 @@
-type Transfer @entity {
-  id: ID! # id is a required field
-  amount: BigInt # Amount that is transferred
-  blockNumber: BigInt # The block height of the transfer
-  from: Account! # The account that transfers are made to
-  to: Account! # The account that transters are made to
+
+type Account @entity {
+  id: ID! #id is a required field
 }
 
-type Account @entity { 
-  id: ID! 
-  publicAddress: String! 
+type Transfer @entity {
+  id: ID!
+  amount: BigInt
+  blockNumber: BigInt
+  from: Account!
+  to: Account!
 }
+
+
+

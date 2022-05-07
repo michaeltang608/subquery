@@ -1,4 +1,4 @@
-version: "3"
+version: "2.1"
 
 services:
   postgres:
@@ -18,7 +18,7 @@ services:
   subquery-node:
     image: onfinality/subql-node:latest
     depends_on:
-      "postgres":
+      postgres:
         condition: service_healthy
     restart: always
     environment:
@@ -43,9 +43,9 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      "postgres":
+      postgres:
         condition: service_healthy
-      "subquery-node":
+      subquery-node:
         condition: service_healthy
     restart: always
     environment:
