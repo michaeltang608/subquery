@@ -1,5 +1,5 @@
 import {SubstrateExtrinsic,SubstrateEvent,SubstrateBlock} from "@subql/types";
-import {Account, Transfer} from "../types";
+import {Transfer} from "../types";
 import {Balance} from "@polkadot/types/interfaces";
 
 
@@ -17,8 +17,8 @@ export async function handleTransfer(event: SubstrateEvent): Promise<void> {
         `${event.block.block.header.number.toNumber()}-${event.idx}`,
     );
     transfer.blockNumber = event.block.block.header.number.toBigInt();
-    transfer.fromId = fromAddress.toString();
-    transfer.toId = toAddress.toString();
+    transfer.from = fromAddress.toString();
+    transfer.to = toAddress.toString();
     transfer.amount = (amount as Balance).toBigInt();
     await transfer.save();
 }

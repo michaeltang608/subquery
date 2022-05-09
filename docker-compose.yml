@@ -2,7 +2,7 @@ version: "2.1"
 
 services:
   postgres:
-    image: postgres:12-alpine
+    image: postgres:11
     ports:
       - 5432:5432
     volumes:
@@ -17,6 +17,8 @@ services:
 
   subquery-node:
     image: onfinality/subql-node:latest
+    # ports:
+    #   - 3000:3000
     depends_on:
       postgres:
         condition: service_healthy
@@ -36,7 +38,7 @@ services:
       test: ["CMD", "curl", "-f", "http://subquery-node:3000/ready"]
       interval: 3s
       timeout: 5s
-      retries: 10
+      retries: 4
 
   graphql-engine:
     image: onfinality/subql-query:latest

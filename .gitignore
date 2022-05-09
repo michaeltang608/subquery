@@ -30,7 +30,7 @@ src/types
 
 # JetBrains IDE
 .idea/
-
+.data/
 # Unit test reports
 TEST*.xml
 

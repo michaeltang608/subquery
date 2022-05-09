@@ -24,7 +24,7 @@ dataSources:
       handlers:
         # - handler: handleBlock
         #   kind: substrate/BlockHandler
-        - handler: handleEvent
+        - handler: handleTransfer
           kind: substrate/EventHandler
           filter:
             module: balances

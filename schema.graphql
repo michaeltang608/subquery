@@ -1,14 +1,14 @@
 
-type Account @entity {
-  id: ID! #id is a required field
-}
+# type Account @entity {
+#   id: ID! #id is a required field
+# }
 
 type Transfer @entity {
   id: ID!
   amount: BigInt
   blockNumber: BigInt
-  from: Account!
-  to: Account!
+  from: String!
+  to: String!
 }
 
 
